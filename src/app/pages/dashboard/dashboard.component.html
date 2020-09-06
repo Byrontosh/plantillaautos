@@ -1,1 +1,36 @@
-<p>dashboard works!</p>
+<form (ngSubmit)="nuevoAuto(myFormAuto.value)" [formGroup]="myFormAuto">
+    <h3 class="box-title m-b-20">Registrar Vehículos</h3>
+    <div class="form-group ">
+        <div class="col-xs-12">
+            <input class="form-control" type="text" placeholder="Marca" formControlName="marcaF"> </div>
+    </div>
+    <div class="form-group">
+        <div class="col-xs-12">
+            <input class="form-control" type="text" placeholder="Modelo" formControlName="modeloF"> </div>
+    </div>
+    <div class="form-group">
+        <div class="col-xs-12">
+            <input class="form-control" type="text" placeholder="Año"  formControlName="anioF"> </div>
+    </div>
+    <div class="form-group">
+        <div class="col-xs-12">
+            <input class="form-control" type="text" placeholder="Imagen"  formControlName="urlF"> </div>
+    </div>
+    <div class="form-group text-center">
+        <div class="col-xs-12 p-b-20">
+            <button class="btn btn-block btn-lg btn-info btn-rounded" type="submit">Registrar</button>
+        </div>
+    </div>
+</form>
+
+<div class="card" style="width: 18rem;" *ngFor="let a of autos">
+    <img class="card-img-top" [src]="a.url"alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Datos</h5>
+      <p class="card-text">MARCA: {{a.marca}}</p>
+      <p class="card-text">MODELO: {{a.modelo}}</p>
+      <p class="card-text">AÑO: {{a.anio}}</p>
+      <button  class="btn btn-block btn-sm btn-info btn-rounded" (click)="actualizarAuto(a.id)">Editar</button>
+      <button  class="btn btn-block btn-sm btn-danger btn-rounded" (click)="eliminarAuto(a.id)">Eliminar</button>
+    </div>
+  </div>

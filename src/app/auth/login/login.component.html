@@ -5,15 +5,17 @@
         <div class="login-register" style="background-image:url(../assets/images/background/auto.jpg);">
             <div class="login-box card">
                 <div class="card-body">
-                    <form class="form-horizontal form-material" id="loginform" action="index.html">
+                    
+                    
+                    <form [formGroup]="myFormUser" (ngSubmit)="loginUser()">
                         <h3 class="box-title m-b-20">Iniciar Sesión</h3>
                         <div class="form-group ">
                             <div class="col-xs-12">
-                                <input class="form-control" type="text" required="" placeholder="Username"> </div>
+                                <input class="form-control" type="email" required="" placeholder="Username" formControlName="usuarioF"> </div>
                         </div>
                         <div class="form-group">
                             <div class="col-xs-12">
-                                <input class="form-control" type="password" required="" placeholder="Password"> </div>
+                                <input class="form-control" type="password" required="" placeholder="Password" formControlName="passwordF"> </div>
                         </div>
                         <div class="form-group text-center">
                             <div class="col-xs-12 p-b-20">
@@ -34,6 +36,12 @@
                             </div>
                         </div>
                     </form>
+
+
+
+
+
+
                     <form class="form-horizontal" id="recoverform" action="index.html">
                         <div class="form-group ">
                             <div class="col-xs-12">
